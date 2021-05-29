@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./Menubar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCoffee,
-  faSearch,
-  faShoppingBag,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { Button, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Menubar = () => {
   const [isSticky, setSticky] = useState(false);
+  // const dispatch= useDispatch()
+
+  const cardProduct = useSelector((state) => {
+    return state.AllProducts.addToCard;
+  });
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
@@ -19,6 +22,7 @@ const Menubar = () => {
       }
     });
   }, []);
+
   return (
     <Navbar
       expand="lg"
@@ -26,11 +30,13 @@ const Menubar = () => {
       fixed="top"
       className={isSticky ? "navbarSticky px-5 py-2" : "navbarMain px-5 py-3"}
     >
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/">
+        React-Bootstrap
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto navItems">
-          <Nav.Link href="#home" className="mr-md-4">
+          <Nav.Link as={Link} to="/" className="mr-md-4">
             HOME
           </Nav.Link>
           <NavDropdown
@@ -59,8 +65,9 @@ const Menubar = () => {
           <Nav.Link href="" className="mr-md-4">
             <FontAwesomeIcon icon={faSearch} />
           </Nav.Link>
-          <Nav.Link href="" className="mr-md-4">
-            <FontAwesomeIcon icon={faShoppingBag} />
+          <Nav.Link as={Link} to="/cartProduct" className="mr-md-4">
+            <FontAwesomeIcon icon={faShoppingBag} />{" "}
+            <sup className="bg-dark p-1 rounded">{cardProduct.length}</sup>
           </Nav.Link>
         </Nav>
         <Button>LogIn</Button>

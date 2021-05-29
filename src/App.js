@@ -1,12 +1,16 @@
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import CardItems from "./Components/CardItems/CardItems";
 import Home from "./Pages/HomePage/Home";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/cartProduct" component={CardItems} />
+      </Switch>
+    </Router>
   );
 }
 
