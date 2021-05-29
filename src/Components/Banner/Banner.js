@@ -8,7 +8,7 @@ import img3 from "../../Images/slider2.jpg";
 const Banner = () => {
   const carouselItems = [
     {
-      img: img3,
+      img: img1,
       title: "Lounge Chairs",
       describe:
         "Lorem ipsum dolor Lorem ipsum dolor sit amer consented adipisicing elia. Quod",
@@ -30,11 +30,10 @@ const Banner = () => {
     <header className="mainBanner">
       <Carousel>
         {carouselItems.map((carouselItems, index) => (
-          <Carousel.Item>
+          <Carousel.Item key={index + 1}>
             <img
-              className="d-block w-100"
+              className="d-block w-100 bannerImg"
               src={carouselItems.img}
-              className="bannerImg"
               alt="First slide"
             />
             <Carousel.Caption className="mainSliderDetails">
