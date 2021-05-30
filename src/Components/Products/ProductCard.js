@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { addToCard } from "../../Redux/Actions/Actions";
 
 const ProductCard = (props) => {
@@ -33,7 +34,7 @@ const ProductCard = (props) => {
             <h6>{title}</h6>
             <div className="d-flex justify-content-around align-items-center pt-2">
               <p>${price}</p>
-              <button className="btn btn-danger">Details</button>
+              <Link to="/productDetails"><button className="btn btn-danger">Details</button></Link>
             </div>
           </div>
         </div>

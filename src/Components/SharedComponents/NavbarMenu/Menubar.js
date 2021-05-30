@@ -70,7 +70,7 @@ const Menubar = () => {
             <sup className="bg-dark p-1 rounded">{cardProduct.length}</sup>
           </Nav.Link>
         </Nav>
-        <Button>LogIn</Button>
+        <Link to="/login"><Button>LogIn</Button></Link>
       </Navbar.Collapse>
     </Navbar>
   );

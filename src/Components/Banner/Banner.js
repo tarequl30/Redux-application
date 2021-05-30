@@ -4,6 +4,7 @@ import "./Banner.css";
 import img1 from "../../Images/slider1.jpg";
 import img2 from "../../Images/slide2.jpg";
 import img3 from "../../Images/slider2.jpg";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   const carouselItems = [
@@ -40,7 +41,7 @@ const Banner = () => {
               <div style={{ flex: "1" }}>
                 <h5>{carouselItems.title}</h5>
                 <p>{carouselItems.describe}</p>
-                <button className="btn btn-danger">Get Now</button>
+                <Link to="/getNow"><button className="btn btn-danger">Get Now</button></Link>
               </div>
               <div style={{ flex: "1" }}></div>
             </Carousel.Caption>
