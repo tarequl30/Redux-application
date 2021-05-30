@@ -18,3 +18,10 @@ export const addToCard = (payload) => {
     payload,
   };
 };
+
+export const removeToCard = (payload) => {
+  return {
+    type: "REMOVE_TO_CARD",
+    payload,
+  };
+};
