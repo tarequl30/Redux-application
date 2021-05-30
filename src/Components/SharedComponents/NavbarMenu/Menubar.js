@@ -31,7 +31,7 @@ const Menubar = () => {
       className={isSticky ? "navbarSticky px-5 py-2" : "navbarMain px-5 py-3"}
     >
       <Navbar.Brand as={Link} to="/">
-        React-Bootstrap
+        LOGO
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -67,7 +67,7 @@ const Menubar = () => {
           </Nav.Link>
           <Nav.Link as={Link} to="/cartProduct" className="mr-md-4">
             <FontAwesomeIcon icon={faShoppingBag} />{" "}
-            <sup className="bg-dark p-1 rounded">{cardProduct.length}</sup>
+            <sup className="bg-primary p-1 rounded">{cardProduct.length}</sup>
           </Nav.Link>
         </Nav>
         <Button>LogIn</Button>
